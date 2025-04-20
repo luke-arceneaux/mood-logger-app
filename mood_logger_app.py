@@ -49,7 +49,7 @@ with st.form(key="mood_entry", clear_on_submit=True):
        
     
 data = conn.read(worksheet="Moods", usecols=list(range(3)), ttl=0)
-data["timestamp"] = pd.to_datetime(data["timestamp"])
+data["timestamp"] = pd.to_datetime(data["timestamp"], errors="coerce")
 
 # Get today's date
 today = datetime.now().date()
