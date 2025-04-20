@@ -33,7 +33,7 @@ with st.form(key="mood_entry", clear_on_submit=True):
         else:
             timestamp = datetime.now()
             new_data = pd.DataFrame([{
-                "timestamp": timestamp,
+                "timestamp": timestamp.strftime("%Y-%m-%d %H:%M:%S"),
                 "mood": mood,
                 "notes": notes
             }])
